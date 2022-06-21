@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 class Posts(models.Model):
     name = models.CharField(max_length=64)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(default='')
     post = models.TextField(default='')
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     
