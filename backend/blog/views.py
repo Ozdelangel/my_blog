@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Posts
 from django.views.generic import ListView, DetailView, CreateView,UpdateView,DeleteView
 
 class PostListView(ListView):
