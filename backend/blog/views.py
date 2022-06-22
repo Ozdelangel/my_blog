@@ -1,18 +1,15 @@
 from django.shortcuts import render
 from .models import Posts
-from django.views.generic import ListView, DetailView, CreateView,UpdateView,DeleteView
+from rest_framework import generics
+from .serializer import PostSerializer
 
-class PostListView(ListView):
-    pass
 
-class PostDetailView(DetailView):
-    pass
+class PostList(generics.ListAPIView):
+    queryset = Posts.objects.all()
+    serializer_class = PostSerializer
 
-class PostCreateView(CreateView):
-    pass
+class PostDetail(generics.RetrieveAPIView):
+    queryset = Posts.objects.all()
+    serializer_class = PostSerializer
 
-class PostUpdateView(UpdateView):
-    pass
 
-class PostDeleteView(DeleteView):
-    pass
